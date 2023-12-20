@@ -1,0 +1,18 @@
+CUDA_VISIBLE_DEVICES=0 python main.py \
+--disco=0 \
+--measure_difference='kl' \
+--disco_a 0.5 \
+--disco_b 0.1 \
+--beta=0.5 \
+--n_parties=6 \
+--n_niid_parties=5 \
+--epochs=10 \
+--comm_round=100 \
+--lr=0.01 \
+--dataset=fmnist \
+--model=simple-cnn-mnist \
+--alg=fedavg \
+--mu=0.1 \
+--partition=noniid-2 \
+--logdir='./logs/' \
+--datadir='./dataset/fmnist'

@@ -1,24 +1,46 @@
 ﻿# FedDisco: Federated Learning with Discrepancy-Aware Collaboration, ICML2023
 
-**Note**: This repo is still in progress.
+This repo is the pytorch implementation of ICML2023 poster "FedDisco: Federated Learning with Discrepancy-Aware Collaboration".
 
-## Introduction
-Here we provide our codes of FedAvg on NIID-1 and NIID-2 settings of CIFAR-10. 
+## Prerequisites
+- Python 3.9
 
-## Instructions
-Please run the code of NIID-1 via:
+- CUDA 11.3
 
-> sh fedavg_10_1.sh
+- Pytorch 1.10.2
 
-Please run the code of NIID-2 via:
+- Torchvision 0.11.3
 
-> sh fedavg_10_2.sh
+  Please refer to `requirements.txt` for more details. This code should work on most builds.
 
- Note that in `fedavg_10_1.sh` and `fedavg_10_2.sh`,  `--partition=noniid` equals to NIID-1 and `--partition=noniid-4` equals to NIID-2.
+## Preparing dataset and model
 
-## Tuning Hyper-parameters
+The argument `--datadir` in `args.py` specifies the location of dataset. 
 
-You may select your cuda device by changing the value of `CUDA_VISIBLE_DEVICES`. To run the experiments of baseline, please keep `--distribution_aware='not'`. To integrate with our FedDisco, let `--distribution_aware='sub'` and change the value of `--disco_a` and `--disco_b`, which corresponds to a and b in our paper, respectively. 
+The argument `--model` has three valid values: `resnet18_gn` , `simple-cnn` and  `simple-cnn-mnist` . The first one is ResNet for HAM10000 dataset while other two are simple CNN networks for small-scale dataset with RGB or grayscale images.
 
+## Federated training
+We provide several shell scripts for training in several settings. The format is
 
+```shell
+sh disco_sh/$DATASET_$PARTITION.sh
+```
+
+For example, to train on Fashion-MNIST dataset with NIID-1 partition, run
+
+```shell
+sh disco_sh/fmnist_1.sh
+```
+
+ To train on CIFAR-10 dataset with NIID-2 partition, run
+
+```shell
+sh disco_sh/cifar10_2.sh
+```
+
+Note that  `--alg` specifies an algorithm.
+
+## Tuning parameters of Disco
+
+To run the experiments of baselines, please keep `--disco=0`. To integrate with our FedDisco, let `--disco=1` and change the value of `--disco_a` and `--disco_b`.
 
