@@ -1,6 +1,6 @@
 ﻿# FedDisco: Federated Learning with Discrepancy-Aware Collaboration, ICML2023
 
-This repo is the pytorch implementation of ICML2023 poster "FedDisco: Federated Learning with Discrepancy-Aware Collaboration".
+This repo is the pytorch implementation of ICML2023 paper "FedDisco: Federated Learning with Discrepancy-Aware Collaboration". [PMLR Link](https://proceedings.mlr.press/v202/ye23f.html)
 
 ## Prerequisites
 - Python 3.9
@@ -44,3 +44,15 @@ Note that  `--alg` specifies an algorithm.
 
 To run the experiments of baselines, please keep `--disco=0`. To integrate with our FedDisco, let `--disco=1` and change the value of `--disco_a` and `--disco_b`.
 
+## Citation
+
+Please cite our paper if you find the repository helpful. See other projects and papers at [Rui Ye's Homepage](https://rui-ye.github.io/).
+
+```
+@article{ye2023feddisco,
+  title={FedDisco: Federated Learning with Discrepancy-Aware Collaboration},
+  author={Ye, Rui and Xu, Mingkai and Wang, Jianyu and Xu, Chenxin and Chen, Siheng and Wang, Yanfeng},
+  journal={arXiv preprint arXiv:2305.19229},
+  year={2023}
+}
+```
