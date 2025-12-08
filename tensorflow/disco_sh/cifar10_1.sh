@@ -1,0 +1,20 @@
+CUDA_VISIBLE_DEVICES=3 python main.py \
+--disco=1 \
+--measure_difference='kl' \
+--disco_a 0.5 \
+--disco_b 0.1 \
+--beta=0.5 \
+--n_parties=10 \
+--epochs=10 \
+--comm_round=100 \
+--lr=0.01 \
+--dataset=cifar10 \
+--model=simple-cnn \
+--alg=fedavg \
+--optimizer=sgd \
+--mu=0.1 \
+--partition=iid \
+--sample_fraction 1 \
+--logdir='./logs/' \
+--download_data=0 \
+--datadir='/data/wenhaowang/FedDisco/datasets/cifar-10-python.tar.gz'
