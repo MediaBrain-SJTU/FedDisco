@@ -1,0 +1,5 @@
+python==3.9.7
+mindspore>=2.0.0
+scipy
+numpy
+scikit-learn

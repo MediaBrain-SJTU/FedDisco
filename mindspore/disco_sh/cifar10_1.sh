@@ -1,0 +1,18 @@
+CUDA_VISIBLE_DEVICES=0 python main.py \
+--disco=1 \
+--measure_difference='kl' \
+--disco_a 0.5 \
+--disco_b 0.1 \
+--beta=0.5 \
+--n_parties=10 \
+--epochs=10 \
+--comm_round=100 \
+--lr=0.01 \
+--dataset=cifar10 \
+--model=simple-cnn \
+--alg=fedavg \
+--mu=0.1 \
+--partition=iid \
+--logdir='./logs/' \
+--download_data=0 \
+--datadir='/data/xinyuzhu/FedFM/mindspore/data/datasets-cifar10-bin/cifar-10-batches-bin'
